@@ -771,6 +771,7 @@ footer span { color: var(--accent); }
     <li><a href="#experience">experience</a></li>
     <li><a href="#projects">projects</a></li>
     <li><a href="#contact">contact</a></li>
+    <li><a href="#testimonials">testimonials</a></li>
   </ul>
   <div class="nav-right">
     <button class="theme-btn" id="themeToggle" title="Toggle theme">🌙</button>
@@ -1087,6 +1088,112 @@ footer span { color: var(--accent); }
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <p class="section-tag reveal">08 — Testimonials</p>
+    <h2 class="section-title reveal">What People Say</h2>
+    <div class="section-line reveal"></div>
+
+    <!-- Public comments display -->
+    <div id="comments-display" style="display:grid; gap:1.2rem; margin-bottom:2.5rem;"></div>
+
+    <!-- Submit form -->
+    <div class="timeline-card reveal" style="margin-bottom:2rem;">
+      <p style="font-family:var(--font-display);font-weight:700;font-size:1.1rem;margin-bottom:1.2rem;">Leave a Testimonial</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+        <div class="form-group"><label>Your Name</label><input type="text" id="c-name" placeholder="e.g. John Smith" /></div>
+        <div class="form-group"><label>Your Role</label><input type="text" id="c-role" placeholder="e.g. Senior Dev · Google" /></div>
+      </div>
+      <div class="form-group" style="margin-bottom:1rem;">
+        <label>Rating</label>
+        <select id="c-rating" style="width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:0.75rem 1rem;border-radius:8px;font-size:0.9rem;outline:none;">
+          <option value="5">★★★★★ — Excellent</option>
+          <option value="4">★★★★☆ — Very Good</option>
+          <option value="3">★★★☆☆ — Good</option>
+        </select>
+      </div>
+      <div class="form-group" style="margin-bottom:1rem;">
+        <label>Comment</label>
+        <textarea id="c-comment" placeholder="Share your experience working with Akila..." style="min-height:100px;"></textarea>
+      </div>
+      <button class="form-submit" onclick="submitComment()">Submit Testimonial →</button>
+      <div id="c-success" style="display:none;text-align:center;padding:0.75rem;color:var(--accent3);font-family:var(--font-mono);font-size:0.85rem;margin-top:0.5rem;background:rgba(52,211,153,0.08);border-radius:8px;">
+        ✅ Submitted! Pending review before it goes live.
+      </div>
+    </div>
+
+    <!-- Admin panel -->
+    <div class="timeline-card reveal" style="border-color:rgba(129,140,248,0.3);">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+        <p style="font-family:var(--font-display);font-weight:700;font-size:1rem;">Admin Panel</p>
+        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text3);">VISIBILITY CONTROL</span>
+      </div>
+      <div id="admin-lock" style="display:flex;gap:0.75rem;">
+        <input type="password" id="admin-pwd" placeholder="Enter admin password"
+          style="flex:1;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:0.7rem 1rem;border-radius:8px;font-size:0.9rem;outline:none;" />
+        <button class="btn-outline" onclick="adminUnlock()" style="padding:0.7rem 1.2rem;">Unlock</button>
+      </div>
+      <div id="admin-content" style="display:none;margin-top:1rem;" ></div>
+      <p id="admin-locked-msg" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text3);text-align:center;padding:0.75rem;margin-top:0.5rem;">
+        🔒 Only you can manage comment visibility
+      </p>
+    </div>
+  </div>
+</section><!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <p class="section-tag reveal">08 — Testimonials</p>
+    <h2 class="section-title reveal">What People Say</h2>
+    <div class="section-line reveal"></div>
+
+    <!-- Public comments display -->
+    <div id="comments-display" style="display:grid; gap:1.2rem; margin-bottom:2.5rem;"></div>
+
+    <!-- Submit form -->
+    <div class="timeline-card reveal" style="margin-bottom:2rem;">
+      <p style="font-family:var(--font-display);font-weight:700;font-size:1.1rem;margin-bottom:1.2rem;">Leave a Testimonial</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+        <div class="form-group"><label>Your Name</label><input type="text" id="c-name" placeholder="e.g. John Smith" /></div>
+        <div class="form-group"><label>Your Role</label><input type="text" id="c-role" placeholder="e.g. Senior Dev · Google" /></div>
+      </div>
+      <div class="form-group" style="margin-bottom:1rem;">
+        <label>Rating</label>
+        <select id="c-rating" style="width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:0.75rem 1rem;border-radius:8px;font-size:0.9rem;outline:none;">
+          <option value="5">★★★★★ — Excellent</option>
+          <option value="4">★★★★☆ — Very Good</option>
+          <option value="3">★★★☆☆ — Good</option>
+        </select>
+      </div>
+      <div class="form-group" style="margin-bottom:1rem;">
+        <label>Comment</label>
+        <textarea id="c-comment" placeholder="Share your experience working with Akila..." style="min-height:100px;"></textarea>
+      </div>
+      <button class="form-submit" onclick="submitComment()">Submit Testimonial →</button>
+      <div id="c-success" style="display:none;text-align:center;padding:0.75rem;color:var(--accent3);font-family:var(--font-mono);font-size:0.85rem;margin-top:0.5rem;background:rgba(52,211,153,0.08);border-radius:8px;">
+        ✅ Submitted! Pending review before it goes live.
+      </div>
+    </div>
+
+    <!-- Admin panel -->
+    <div class="timeline-card reveal" style="border-color:rgba(129,140,248,0.3);">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+        <p style="font-family:var(--font-display);font-weight:700;font-size:1rem;">Admin Panel</p>
+        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text3);">VISIBILITY CONTROL</span>
+      </div>
+      <div id="admin-lock" style="display:flex;gap:0.75rem;">
+        <input type="password" id="admin-pwd" placeholder="Enter admin password"
+          style="flex:1;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:0.7rem 1rem;border-radius:8px;font-size:0.9rem;outline:none;" />
+        <button class="btn-outline" onclick="adminUnlock()" style="padding:0.7rem 1.2rem;">Unlock</button>
+      </div>
+      <div id="admin-content" style="display:none;margin-top:1rem;" ></div>
+      <p id="admin-locked-msg" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text3);text-align:center;padding:0.75rem;margin-top:0.5rem;">
+        🔒 Only you can manage comment visibility
+      </p>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
@@ -1272,6 +1379,110 @@ function closeMobile() { mob.classList.remove('open'); }
   window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
   formspree('initForm', { formElement: '#contact-form', formId: 'mnjlokwq' });
 </script>
-<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer>
+  // ── COMMENTS SYSTEM
+const ADMIN_PASSWORD = 'YourSecretPassword123'; // CHANGE THIS!
+
+function getComments() {
+  try { return JSON.parse(localStorage.getItem('portfolio_comments') || '[]'); }
+  catch { return []; }
+}
+function saveComments(c) { localStorage.setItem('portfolio_comments', JSON.stringify(c)); }
+
+function renderComments() {
+  const comments = getComments();
+  const display = document.getElementById('comments-display');
+  const visible = comments.filter(c => c.visible);
+  if (visible.length === 0) {
+    display.innerHTML = `<p style="font-family:var(--font-mono);font-size:0.8rem;color:var(--text3);text-align:center;padding:1rem;">No testimonials yet — be the first!</p>`;
+    return;
+  }
+  display.innerHTML = visible.map(c => `
+    <div class="timeline-card" style="transition:all 0.3s;">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:0.75rem;">
+        <div style="width:44px;height:44px;border-radius:50%;background:rgba(56,189,248,0.15);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;color:var(--accent);font-size:1rem;flex-shrink:0;">${c.name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase()}</div>
+        <div>
+          <div style="font-family:var(--font-display);font-weight:700;font-size:1rem;">${c.name}</div>
+          <div style="font-size:0.8rem;color:var(--text3);font-family:var(--font-mono);">${c.role}</div>
+        </div>
+      </div>
+      <div style="color:#f59e0b;font-size:0.9rem;margin-bottom:0.5rem;">${'★'.repeat(c.rating)}${'☆'.repeat(5-c.rating)}</div>
+      <p style="font-size:0.92rem;color:var(--text2);line-height:1.7;">${c.comment}</p>
+    </div>
+  `).join('');
+}
+
+function submitComment() {
+  const name = document.getElementById('c-name').value.trim();
+  const role = document.getElementById('c-role').value.trim();
+  const rating = parseInt(document.getElementById('c-rating').value);
+  const comment = document.getElementById('c-comment').value.trim();
+  if (!name || !comment) { alert('Please enter your name and comment.'); return; }
+  const comments = getComments();
+  comments.push({ id: Date.now(), name, role, rating, comment, visible: false, date: new Date().toLocaleDateString() });
+  saveComments(comments);
+  document.getElementById('c-success').style.display = 'block';
+  ['c-name','c-role','c-comment'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('c-rating').value = '5';
+  setTimeout(() => document.getElementById('c-success').style.display = 'none', 4000);
+  renderComments();
+  if (document.getElementById('admin-content').style.display !== 'none') renderAdminPanel();
+}
+
+function adminUnlock() {
+  const pwd = document.getElementById('admin-pwd').value;
+  if (pwd === ADMIN_PASSWORD) {
+    document.getElementById('admin-lock').style.display = 'none';
+    document.getElementById('admin-locked-msg').style.display = 'none';
+    renderAdminPanel();
+    document.getElementById('admin-content').style.display = 'block';
+  } else {
+    document.getElementById('admin-pwd').style.borderColor = '#f87171';
+    setTimeout(() => document.getElementById('admin-pwd').style.borderColor = '', 1500);
+  }
+}
+
+function renderAdminPanel() {
+  const comments = getComments();
+  const panel = document.getElementById('admin-content');
+  if (comments.length === 0) {
+    panel.innerHTML = `<p style="font-family:var(--font-mono);font-size:0.8rem;color:var(--text3);text-align:center;padding:1rem;">No submissions yet.</p>`;
+    return;
+  }
+  panel.innerHTML = comments.map(c => `
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid var(--border);gap:1rem;flex-wrap:wrap;">
+      <div style="flex:1;min-width:0;">
+        <div style="font-family:var(--font-display);font-weight:700;font-size:0.9rem;">${c.name}
+          <span style="font-size:0.7rem;padding:2px 8px;border-radius:12px;margin-left:6px;font-family:var(--font-mono);
+            background:${c.visible ? 'rgba(52,211,153,0.12)' : 'rgba(148,163,184,0.12)'};
+            color:${c.visible ? 'var(--accent3)' : 'var(--text3)'};">
+            ${c.visible ? 'Visible' : 'Hidden'}
+          </span>
+        </div>
+        <div style="font-size:0.78rem;color:var(--text3);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${c.comment.slice(0,60)}...</div>
+      </div>
+      <div style="display:flex;gap:0.5rem;flex-shrink:0;">
+        <button onclick="toggleComment(${c.id}, true)" style="font-size:0.75rem;padding:0.3rem 0.8rem;border-radius:6px;border:1px solid var(--border);cursor:pointer;background:${c.visible ? 'rgba(52,211,153,0.15)' : 'var(--surface)'};color:${c.visible ? 'var(--accent3)' : 'var(--text2)'};">Show</button>
+        <button onclick="toggleComment(${c.id}, false)" style="font-size:0.75rem;padding:0.3rem 0.8rem;border-radius:6px;border:1px solid var(--border);cursor:pointer;background:${!c.visible ? 'rgba(148,163,184,0.15)' : 'var(--surface)'};color:var(--text2);">Hide</button>
+        <button onclick="deleteComment(${c.id})" style="font-size:0.75rem;padding:0.3rem 0.8rem;border-radius:6px;border:1px solid rgba(248,113,113,0.3);cursor:pointer;background:rgba(248,113,113,0.08);color:#f87171;">Delete</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleComment(id, visible) {
+  const comments = getComments();
+  const c = comments.find(c => c.id === id);
+  if (c) { c.visible = visible; saveComments(comments); renderComments(); renderAdminPanel(); }
+}
+
+function deleteComment(id) {
+  if (!confirm('Delete this comment permanently?')) return;
+  saveComments(getComments().filter(c => c.id !== id));
+  renderComments(); renderAdminPanel();
+}
+
+renderComments();
+</script>
 </body>
 </html>
