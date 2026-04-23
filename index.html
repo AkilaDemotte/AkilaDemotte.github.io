@@ -1140,59 +1140,6 @@ footer span { color: var(--accent); }
       </p>
     </div>
   </div>
-</section><!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="container">
-    <p class="section-tag reveal">08 — Testimonials</p>
-    <h2 class="section-title reveal">What People Say</h2>
-    <div class="section-line reveal"></div>
-
-    <!-- Public comments display -->
-    <div id="comments-display" style="display:grid; gap:1.2rem; margin-bottom:2.5rem;"></div>
-
-    <!-- Submit form -->
-    <div class="timeline-card reveal" style="margin-bottom:2rem;">
-      <p style="font-family:var(--font-display);font-weight:700;font-size:1.1rem;margin-bottom:1.2rem;">Leave a Testimonial</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
-        <div class="form-group"><label>Your Name</label><input type="text" id="c-name" placeholder="e.g. John Smith" /></div>
-        <div class="form-group"><label>Your Role</label><input type="text" id="c-role" placeholder="e.g. Senior Dev · Google" /></div>
-      </div>
-      <div class="form-group" style="margin-bottom:1rem;">
-        <label>Rating</label>
-        <select id="c-rating" style="width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:0.75rem 1rem;border-radius:8px;font-size:0.9rem;outline:none;">
-          <option value="5">★★★★★ — Excellent</option>
-          <option value="4">★★★★☆ — Very Good</option>
-          <option value="3">★★★☆☆ — Good</option>
-        </select>
-      </div>
-      <div class="form-group" style="margin-bottom:1rem;">
-        <label>Comment</label>
-        <textarea id="c-comment" placeholder="Share your experience working with Akila..." style="min-height:100px;"></textarea>
-      </div>
-      <button class="form-submit" onclick="submitComment()">Submit Testimonial →</button>
-      <div id="c-success" style="display:none;text-align:center;padding:0.75rem;color:var(--accent3);font-family:var(--font-mono);font-size:0.85rem;margin-top:0.5rem;background:rgba(52,211,153,0.08);border-radius:8px;">
-        ✅ Submitted! Pending review before it goes live.
-      </div>
-    </div>
-
-    <!-- Admin panel -->
-    <div class="timeline-card reveal" style="border-color:rgba(129,140,248,0.3);">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
-        <p style="font-family:var(--font-display);font-weight:700;font-size:1rem;">Admin Panel</p>
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text3);">VISIBILITY CONTROL</span>
-      </div>
-      <div id="admin-lock" style="display:flex;gap:0.75rem;">
-        <input type="password" id="admin-pwd" placeholder="Enter admin password"
-          style="flex:1;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:0.7rem 1rem;border-radius:8px;font-size:0.9rem;outline:none;" />
-        <button class="btn-outline" onclick="adminUnlock()" style="padding:0.7rem 1.2rem;">Unlock</button>
-      </div>
-      <div id="admin-content" style="display:none;margin-top:1rem;" ></div>
-      <p id="admin-locked-msg" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text3);text-align:center;padding:0.75rem;margin-top:0.5rem;">
-        🔒 Only you can manage comment visibility
-      </p>
-    </div>
-  </div>
-</section>
 
 <!-- CONTACT -->
 <section id="contact">
@@ -1379,7 +1326,8 @@ function closeMobile() { mob.classList.remove('open'); }
   window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
   formspree('initForm', { formElement: '#contact-form', formId: 'mnjlokwq' });
 </script>
-<script src="https://unpkg.com/@formspree/ajax@1" defer>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+<script>
   // ── COMMENTS SYSTEM
 const ADMIN_PASSWORD = 'YourSecretPassword123'; // CHANGE THIS!
 
